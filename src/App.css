@@ -11,6 +11,34 @@
 }
 
 .title {
-  color: white;
+  color: rgb(88, 245, 88);
   font-size: 40px;
+}
+
+/* INPUT */
+
+.input {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.inputBox {
+  padding: 20px 30px;
+  outline: none;
+  border-radius: 40px;
+  font-size: 25px;
+}
+
+.btn {
+  position: absolute;
+  margin: 12px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  background-color: rgb(88, 245, 88);
+  right: 0;
+  cursor: pointer;
 }
