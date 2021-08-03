@@ -1,10 +1,21 @@
 import React from "react";
 
-const InputField: React.FC = () => {
+interface Props {
+  todo: string;
+  setTodo: React.Dispatch<React.SetStateAction<string>>;
+  addHandler: (e: React.FormEvent) => void;
+}
+
+const InputField: React.FC<Props> = ({ todo, setTodo, addHandler }) => {
   return (
-    <form className="input">
-      <input placeholder="Add whatever you want!" className="inputBox" />
-      <button type="button" className="btn">
+    <form className="input" onSubmit={addHandler}>
+      <input
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+        placeholder="Add whatever you want!"
+        className="inputBox"
+      />
+      <button type="submit" className="btn">
         Add
       </button>
     </form>
