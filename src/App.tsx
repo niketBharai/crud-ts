@@ -13,9 +13,14 @@ const App: React.FC = () => {
     e.preventDefault();
 
     if (todo) {
-      setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
-      setTodo("");
-      setErr("");
+      if (todos.length <= 5) {
+        setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
+        setTodo("");
+        setErr("");
+      } else {
+        alert("Limit Exceeded");
+        setTodo("");
+      }
     } else {
       setErr("You forgot to add !");
     }
